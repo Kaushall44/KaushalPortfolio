@@ -1,0 +1,53 @@
+.robot-canvas {
+  height: 300px !important;
+  width: 300px !important;
+  cursor: grab;
+  background-color: transparent !important;
+}
+
+.car-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+
+  .ball-text {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 500px;
+
+    .heading {
+      font-size: 36px;
+      font-weight: 700;
+      color: $black;
+      text-align: right;
+    }
+
+    .desc {
+      font-size: 24px;
+      font-weight: 500;
+      color: $black;
+      text-align: right;
+      line-height: 48px;
+    }
+
+    .small-desc {
+      font-size: 24px;
+      font-weight: 400;
+      color: $black;
+    }
+
+    code {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: $white;
+      padding: 4px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 22px;
+    }
+  }
+}

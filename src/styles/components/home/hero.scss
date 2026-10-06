@@ -1,0 +1,121 @@
+.hero-section {
+  margin-top: 48px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0px;
+  position: relative;
+
+  .heading-section {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+
+    .heading {
+      max-width: 900px;
+      font-family: var(--font-serif);
+      font-size: 64px;
+      font-weight: 400;
+      text-align: center;
+      line-height: 72px;
+    }
+    .desc {
+      color: var(--text-grey);
+      font-size: 18px;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    .btn-flex {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+
+      .icon-link {
+        padding: 4px;
+        font-size: 24px;
+      }
+
+      .icon-arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--grey);
+        color: $black;
+        border-radius: 50%;
+        padding: 4px;
+        font-size: 24px;
+      }
+    }
+
+    .bottom-text {
+      color: var(--text-grey);
+      text-align: center;
+      margin-top: 24px;
+      width: 100%;
+      min-height: 48px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero-section {
+    margin-top: 48px;
+
+    .heading-section {
+      max-width: 100%;
+      gap: 20px;
+
+      .heading {
+        font-family: var(--font-serif);
+        font-size: 36px;
+        font-weight: 400;
+        text-align: center;
+        line-height: 44px;
+      }
+      .desc {
+        color: var(--text-grey);
+        font-size: 18px;
+        text-align: center;
+        font-weight: 400;
+      }
+
+      .btn-flex {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+
+        .icon-link {
+          padding: 4px;
+          font-size: 24px;
+        }
+
+        .icon-arrow {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: var(--grey);
+          color: $black;
+          border-radius: 50%;
+          padding: 4px;
+          font-size: 24px;
+        }
+      }
+
+      .bottom-text {
+        color: var(--text-grey);
+        text-align: center;
+        margin-top: 24px;
+        min-height: 72px;
+      }
+    }
+  }
+}

@@ -1,0 +1,1050 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "kaushalrajgupta.is-a.dev API",
+    "version": "1.0.0",
+    "summary": "Structured data about Kaushal Raj Gupta for agents and developers.",
+    "description": "Read-only JSON endpoints describing Kaushal Raj Gupta's profile, experience, skills and projects, plus a conversational endpoint that answers questions about his work.\n\n**Authentication.** None. There is no API key, no OAuth flow and no signup. The one exception is `POST /api/v1/chat`, which is origin-locked rather than key-authenticated — see https://kaushalrajgupta.is-a.dev/auth.md.\n\n**Versioning.** The API is versioned in the URL path (`/api/v1`). Breaking changes ship under a new path segment (`/api/v2`); the previous version keeps working. Additive changes — new fields, new optional parameters, new endpoints — are made in place and are not breaking, so clients must ignore unknown fields.\n\n**Deprecation policy.** A version scheduled for removal returns the `Deprecation` header (an HTTP date) and a `Sunset` header (RFC 8594) giving the date after which it stops responding, plus a `Link` header with `rel=\"deprecation\"` pointing at the migration notes. A version is never sunset less than 180 days after the `Deprecation` header first appears.\n\n**Rate limits.** Every response carries `RateLimit-Limit`, `RateLimit-Remaining`, `RateLimit-Reset` and `RateLimit-Policy`. Read endpoints allow 60 requests per IP per minute; the chat endpoint allows 10. A `429` includes `Retry-After`.\n\n**Errors.** Every non-2xx response is an RFC 9457 problem detail with `application/problem+json`, carrying a stable machine-readable `code`.",
+    "contact": {
+      "name": "Kaushal Raj Gupta",
+      "email": "kushh4@proton.me",
+      "url": "https://kaushalrajgupta.is-a.dev/contact"
+    },
+    "license": {
+      "name": "Content © Kaushal Raj Gupta. Reuse with attribution.",
+      "url": "https://kaushalrajgupta.is-a.dev/privacy"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://kaushalrajgupta.is-a.dev/api/v1",
+      "description": "Production, API version 1."
+    }
+  ],
+  "tags": [
+    {
+      "name": "profile",
+      "description": "Structured facts about Kaushal Raj Gupta: who he is, where he has worked, what he can do."
+    },
+    {
+      "name": "work",
+      "description": "Projects he has built."
+    },
+    {
+      "name": "chat",
+      "description": "Natural-language question answering about Kaushal."
+    }
+  ],
+  "paths": {
+    "/profile": {
+      "get": {
+        "operationId": "getProfile",
+        "tags": [
+          "profile"
+        ],
+        "summary": "Get Kaushal Raj Gupta's full profile",
+        "description": "Returns the published profile, in-progress education, selected experience, skills, learning interests, and contact links.",
+        "responses": {
+          "200": {
+            "description": "The profile.",
+            "headers": {
+              "RateLimit-Limit": {
+                "$ref": "#/components/headers/RateLimit-Limit"
+              },
+              "RateLimit-Remaining": {
+                "$ref": "#/components/headers/RateLimit-Remaining"
+              },
+              "RateLimit-Reset": {
+                "$ref": "#/components/headers/RateLimit-Reset"
+              },
+              "RateLimit-Policy": {
+                "$ref": "#/components/headers/RateLimit-Policy"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
+          }
+        }
+      }
+    },
+    "/experience": {
+      "get": {
+        "operationId": "listExperience",
+        "tags": [
+          "profile"
+        ],
+        "summary": "List selected experience",
+        "description": "Returns selected roles including volunteering, with title, company, dates, kind, and summary. Pass current=true for entries with no end date.",
+        "parameters": [
+          {
+            "name": "current",
+            "in": "query",
+            "required": false,
+            "description": "When \"true\", return only roles with no end date.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Matching roles.",
+            "headers": {
+              "RateLimit-Limit": {
+                "$ref": "#/components/headers/RateLimit-Limit"
+              },
+              "RateLimit-Remaining": {
+                "$ref": "#/components/headers/RateLimit-Remaining"
+              },
+              "RateLimit-Reset": {
+                "$ref": "#/components/headers/RateLimit-Reset"
+              },
+              "RateLimit-Policy": {
+                "$ref": "#/components/headers/RateLimit-Policy"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExperienceResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
+          }
+        }
+      }
+    },
+    "/skills": {
+      "get": {
+        "operationId": "listSkills",
+        "tags": [
+          "profile"
+        ],
+        "summary": "List technical skills",
+        "description": "Returns Kaushal's technical skills grouped into frontend, backend, ai and infrastructure. Pass `group` to narrow the response to a single discipline.",
+        "parameters": [
+          {
+            "name": "group",
+            "in": "query",
+            "required": false,
+            "description": "Restrict the response to one skill group.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "frontend",
+                "backend",
+                "tools",
+                "exploring"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Skills, grouped.",
+            "headers": {
+              "RateLimit-Limit": {
+                "$ref": "#/components/headers/RateLimit-Limit"
+              },
+              "RateLimit-Remaining": {
+                "$ref": "#/components/headers/RateLimit-Remaining"
+              },
+              "RateLimit-Reset": {
+                "$ref": "#/components/headers/RateLimit-Reset"
+              },
+              "RateLimit-Policy": {
+                "$ref": "#/components/headers/RateLimit-Policy"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SkillsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
+          }
+        }
+      }
+    },
+    "/projects": {
+      "get": {
+        "operationId": "listProjects",
+        "tags": [
+          "work"
+        ],
+        "summary": "List projects",
+        "description": "Returns projects Kaushal has built, each with a stable id, name, description, category, technology list, live URL and repository URL where public, and the year shipped. Pass `category` to filter to web, mobile, ai or game.",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "required": false,
+            "description": "Restrict the response to one project category.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "web",
+                "ai"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Matching projects.",
+            "headers": {
+              "RateLimit-Limit": {
+                "$ref": "#/components/headers/RateLimit-Limit"
+              },
+              "RateLimit-Remaining": {
+                "$ref": "#/components/headers/RateLimit-Remaining"
+              },
+              "RateLimit-Reset": {
+                "$ref": "#/components/headers/RateLimit-Reset"
+              },
+              "RateLimit-Policy": {
+                "$ref": "#/components/headers/RateLimit-Policy"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
+          }
+        }
+      }
+    },
+    "/chat": {
+      "post": {
+        "operationId": "askAboutAvi",
+        "tags": [
+          "chat"
+        ],
+        "summary": "Ask a natural-language question about Kaushal",
+        "description": "Answers questions about Kaushal's work, skills, projects and background in prose. Responds with a Server-Sent Event stream of incremental text terminated by `data: [DONE]`.\n\nThis endpoint is origin-locked: the request must carry an `Origin` or `Referer` header beginning with `https://kaushalrajgupta.is-a.dev` or `https://kaushalrajgupta.is-a.dev`, otherwise it returns 403. Prefer `GET /profile` when you need facts rather than prose — it is cheaper, unrestricted, and returns typed data.",
+        "parameters": [
+          {
+            "name": "Origin",
+            "in": "header",
+            "required": true,
+            "description": "Must be https://kaushalrajgupta.is-a.dev or https://kaushalrajgupta.is-a.dev.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "https://kaushalrajgupta.is-a.dev",
+                "https://kaushalrajgupta.is-a.dev"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "The conversation so far, oldest turn first.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Server-Sent Event stream of incremental response text.",
+            "headers": {
+              "RateLimit-Limit": {
+                "$ref": "#/components/headers/RateLimit-Limit"
+              },
+              "RateLimit-Remaining": {
+                "$ref": "#/components/headers/RateLimit-Remaining"
+              },
+              "RateLimit-Reset": {
+                "$ref": "#/components/headers/RateLimit-Reset"
+              },
+              "RateLimit-Policy": {
+                "$ref": "#/components/headers/RateLimit-Policy"
+              }
+            },
+            "content": {
+              "text/event-stream": {
+                "schema": {
+                  "type": "string",
+                  "description": "SSE frames. Each `data:` line carries a text delta; the stream ends with `data: [DONE]`."
+                },
+                "example": "data: Kaushal is a fullstack developer\ndata:  and cybersecurity enthusiast.\ndata: [DONE]\n"
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalError"
+          },
+          "502": {
+            "$ref": "#/components/responses/UpstreamError"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "headers": {
+      "RateLimit-Limit": {
+        "description": "Requests permitted per window for the calling IP.",
+        "schema": {
+          "type": "string",
+          "examples": [
+            "60"
+          ]
+        }
+      },
+      "RateLimit-Remaining": {
+        "description": "Requests remaining in the current window.",
+        "schema": {
+          "type": "string",
+          "examples": [
+            "59"
+          ]
+        }
+      },
+      "RateLimit-Reset": {
+        "description": "Seconds until the current window resets.",
+        "schema": {
+          "type": "string",
+          "examples": [
+            "60"
+          ]
+        }
+      },
+      "RateLimit-Policy": {
+        "description": "The rate limit policy in force.",
+        "schema": {
+          "type": "string",
+          "examples": [
+            "60;w=60"
+          ]
+        }
+      }
+    },
+    "responses": {
+      "BadRequest": {
+        "description": "The request was malformed or a parameter was invalid.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "The Origin or Referer header is not an allowed origin.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "No such endpoint.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "MethodNotAllowed": {
+        "description": "The HTTP method is not supported by this endpoint.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "RateLimited": {
+        "description": "Rate limit exceeded. Honour the Retry-After header.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        },
+        "headers": {
+          "RateLimit-Limit": {
+            "$ref": "#/components/headers/RateLimit-Limit"
+          },
+          "RateLimit-Remaining": {
+            "$ref": "#/components/headers/RateLimit-Remaining"
+          },
+          "RateLimit-Reset": {
+            "$ref": "#/components/headers/RateLimit-Reset"
+          },
+          "RateLimit-Policy": {
+            "$ref": "#/components/headers/RateLimit-Policy"
+          },
+          "Retry-After": {
+            "description": "Seconds to wait before retrying.",
+            "schema": {
+              "type": "string",
+              "examples": [
+                "60"
+              ]
+            }
+          }
+        }
+      },
+      "InternalError": {
+        "description": "Unexpected server error.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "UpstreamError": {
+        "description": "The upstream model provider failed. Usually transient; retry with backoff.",
+        "content": {
+          "application/problem+json": {
+            "schema": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "Problem": {
+        "type": "object",
+        "description": "RFC 9457 problem detail. Branch on `code`, which is stable; `detail` is human-readable and may change.",
+        "required": [
+          "type",
+          "title",
+          "status",
+          "code",
+          "detail"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "format": "uri",
+            "description": "URI identifying the problem type."
+          },
+          "title": {
+            "type": "string",
+            "description": "Short summary."
+          },
+          "status": {
+            "type": "integer",
+            "description": "HTTP status code.",
+            "examples": [
+              400,
+              403,
+              429
+            ]
+          },
+          "code": {
+            "type": "string",
+            "description": "Stable machine-readable error code.",
+            "enum": [
+              "invalid_request",
+              "invalid_parameter",
+              "message_too_long",
+              "origin_not_allowed",
+              "not_found",
+              "method_not_allowed",
+              "rate_limited",
+              "service_unconfigured",
+              "upstream_error",
+              "internal_error"
+            ]
+          },
+          "detail": {
+            "type": "string",
+            "description": "Human-readable explanation, including how to resolve it."
+          },
+          "instance": {
+            "type": "string",
+            "description": "The path that produced the error."
+          },
+          "retryAfterSeconds": {
+            "type": "integer",
+            "description": "Present on 429: seconds until the limit resets."
+          },
+          "parameter": {
+            "type": "string",
+            "description": "Present on parameter errors: which parameter was wrong."
+          },
+          "allowedValues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Present on parameter errors: the accepted values."
+          },
+          "documentation": {
+            "type": "string",
+            "format": "uri",
+            "description": "Link to the relevant documentation."
+          }
+        }
+      },
+      "Location": {
+        "type": "object",
+        "description": "Where Kaushal is based and how he works.",
+        "required": [
+          "locality",
+          "country",
+          "timezone"
+        ],
+        "properties": {
+          "locality": {
+            "type": "string",
+            "examples": [
+              "Ranchi"
+            ]
+          },
+          "region": {
+            "type": "string",
+            "examples": [
+              "Jharkhand"
+            ]
+          },
+          "country": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-2 country code.",
+            "examples": [
+              "IN"
+            ]
+          },
+          "timezone": {
+            "type": "string",
+            "description": "IANA timezone.",
+            "examples": [
+              "Asia/Kolkata"
+            ]
+          },
+          "utcOffset": {
+            "type": "string",
+            "examples": [
+              "+05:30"
+            ]
+          },
+          "remote": {
+            "type": "boolean",
+            "description": "Whether he works remotely with distributed teams."
+          }
+        }
+      },
+      "Education": {
+        "type": "object",
+        "required": [
+          "degree",
+          "university",
+          "year",
+          "status"
+        ],
+        "properties": {
+          "degree": {
+            "type": "string",
+            "examples": [
+              "B.Tech in Computer Science and Engineering"
+            ]
+          },
+          "university": {
+            "type": "string",
+            "examples": [
+              "Siksha 'O' Anusandhan University"
+            ]
+          },
+          "institute": {
+            "type": "string",
+            "examples": [
+              "Institute of Technical Education and Research (ITER)"
+            ]
+          },
+          "year": {
+            "type": "string",
+            "examples": [
+              "2024–2028"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "examples": [
+              "In progress"
+            ]
+          }
+        }
+      },
+      "Role": {
+        "type": "object",
+        "description": "A selected experience or volunteering role.",
+        "required": [
+          "title",
+          "company",
+          "startDate",
+          "endDate"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "examples": [
+              "Cyber Volunteer"
+            ]
+          },
+          "company": {
+            "type": "string",
+            "examples": [
+              "Ministry of Home Affairs, Government of India"
+            ]
+          },
+          "startDate": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}$",
+            "description": "Month the role began, as YYYY-MM.",
+            "examples": [
+              "2024-10"
+            ]
+          },
+          "endDate": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^\\d{4}-\\d{2}$",
+            "description": "Month the role ended, or null if it is current.",
+            "examples": [
+              "2025-06",
+              null
+            ]
+          },
+          "summary": {
+            "type": "string",
+            "description": "What he did in the role."
+          },
+          "technologies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Technologies used in the role."
+          },
+          "kind": {
+            "type": "string",
+            "description": "Type of experience, such as volunteering."
+          }
+        }
+      },
+      "Skills": {
+        "type": "object",
+        "description": "Published skills by discipline; exploring contains learning interests.",
+        "properties": {
+          "frontend": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "backend": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "exploring": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Project": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "description",
+          "category",
+          "technologies"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Stable identifier.",
+            "examples": [
+              "campus-connect"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "web",
+              "ai"
+            ]
+          },
+          "technologies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Live demo URL; an empty string means no demo is listed."
+          },
+          "repositoryUrl": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Public source repository, or null if closed source."
+          }
+        }
+      },
+      "Profile": {
+        "type": "object",
+        "required": [
+          "name",
+          "headline",
+          "summary",
+          "url"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "examples": [
+              "Kaushal Raj Gupta"
+            ]
+          },
+          "headline": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "location": {
+            "$ref": "#/components/schemas/Location"
+          },
+          "education": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Education"
+            }
+          },
+          "experience": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Role"
+            }
+          },
+          "skills": {
+            "$ref": "#/components/schemas/Skills"
+          },
+          "availability": {
+            "type": "object",
+            "description": "What kinds of work he is open to and how to start a conversation.",
+            "properties": {
+              "openTo": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "contactUrl": {
+                "type": "string",
+                "format": "uri"
+              },
+              "preferredContact": {
+                "type": "string",
+                "examples": [
+                  "LinkedIn"
+                ]
+              }
+            }
+          },
+          "links": {
+            "type": "object",
+            "description": "Canonical links.",
+            "properties": {
+              "website": {
+                "type": "string",
+                "format": "uri"
+              },
+              "github": {
+                "type": "string",
+                "format": "uri"
+              },
+              "linkedin": {
+                "type": "string",
+                "format": "uri"
+              },
+              "llmsTxt": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        }
+      },
+      "ProfileResponse": {
+        "type": "object",
+        "required": [
+          "apiVersion",
+          "data"
+        ],
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "const": "v1"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Profile"
+          }
+        }
+      },
+      "ExperienceResponse": {
+        "type": "object",
+        "required": [
+          "apiVersion",
+          "data"
+        ],
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "const": "v1"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Role"
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "total": {
+                "type": "integer"
+              },
+              "currentOnly": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      },
+      "SkillsResponse": {
+        "type": "object",
+        "required": [
+          "apiVersion",
+          "data"
+        ],
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "const": "v1"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Skills"
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "group": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ProjectsResponse": {
+        "type": "object",
+        "required": [
+          "apiVersion",
+          "data"
+        ],
+        "properties": {
+          "apiVersion": {
+            "type": "string",
+            "const": "v1"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Project"
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "total": {
+                "type": "integer"
+              },
+              "category": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Message": {
+        "type": "object",
+        "required": [
+          "role",
+          "content"
+        ],
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "user",
+              "assistant"
+            ],
+            "description": "Who produced this turn."
+          },
+          "content": {
+            "type": "string",
+            "maxLength": 500,
+            "description": "Message text. The final user message must be 500 characters or fewer."
+          }
+        }
+      },
+      "ChatRequest": {
+        "type": "object",
+        "required": [
+          "messages"
+        ],
+        "properties": {
+          "messages": {
+            "type": "array",
+            "minItems": 1,
+            "description": "Conversation so far, oldest first.",
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            }
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Developer portal",
+    "url": "https://kaushalrajgupta.is-a.dev/developers"
+  },
+  "security": []
+}

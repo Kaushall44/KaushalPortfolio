@@ -1,0 +1,132 @@
+{
+  "name": "Kaushal Raj Gupta",
+  "shortName": "Kaushal",
+  "handle": "Kaushall44",
+  "url": "https://kaushalrajgupta.is-a.dev",
+  "headline": "Full Stack Developer & Cybersecurity Enthusiast",
+  "summary": "I'm Kaushal Raj Gupta, a developer based in India building useful web applications, AI tools, and community experiences. I combine full-stack development with a growing focus on cybersecurity and security operations.",
+  "email": "kushh4@proton.me",
+  "location": { "locality": "Ranchi", "region": "Jharkhand", "country": "IN", "timezone": "Asia/Kolkata" },
+  "links": {
+    "github": "https://github.com/Kaushall44",
+    "linkedin": "https://www.linkedin.com/in/kaushalrajgupta/",
+    "twitter": "https://twitter.com/kaushall44"
+  },
+  "education": {
+    "degree": "B.Tech in Computer Science and Engineering",
+    "university": "Siksha 'O' Anusandhan University",
+    "institute": "Institute of Technical Education and Research (ITER)",
+    "year": "2024–2028",
+    "status": "In progress"
+  },
+  "interests": ["Cybersecurity", "Security operations", "Web development", "AI tools", "Discord bots"],
+  "skills": {
+    "frontend": ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
+    "backend": ["Node.js", "Express", "Python", "FastAPI", "Firebase", "Supabase", "REST APIs"],
+    "tools": ["Git", "GitHub", "Vite", "Vercel", "GitHub Pages"],
+    "exploring": ["Cybersecurity", "SOC analysis", "Cloud technologies", "DevOps"]
+  },
+  "experience": [
+    {
+      "title": "Technical Core Member",
+      "company": "Innovation and Entrepreneurship Cell",
+      "date": "December 2024–Present",
+      "startDate": "2024-12",
+      "endDate": null,
+      "kind": "Technical team",
+      "description": "Joined as a Technical Team Member in December 2024 and progressed to Technical Core Member in May 2025 in Bhubaneswar, Odisha.",
+      "points": ["Progressed to Technical Core Member in May 2025 and continue in the role part-time.", "Previously served as a full-time Technical Team Member from December 2024 to May 2025.", "Part of the Innovation and Entrepreneurship Cell technical team in Bhubaneswar, Odisha."]
+    },
+    {
+      "title": "Cybersecurity Intern",
+      "company": "Uttar Pradesh Police",
+      "date": "June 2026",
+      "startDate": "2026-06",
+      "endDate": "2026-06",
+      "kind": "Internship",
+      "description": "Completed a cybersecurity internship with Uttar Pradesh Police, with a focus on digital forensics and cybersecurity.",
+      "points": ["Completed a cybersecurity internship with Uttar Pradesh Police in June 2026.", "Digital forensics was a key focus area of the internship.", "Developed cybersecurity knowledge through the internship in Uttar Pradesh, India."]
+    },
+    {
+      "title": "Cyber Volunteer",
+      "company": "Ministry of Home Affairs, Government of India",
+      "date": "August 2025–June 2026",
+      "startDate": "2025-08",
+      "endDate": "2026-06",
+      "kind": "Volunteering",
+      "description": "Served remotely as a part-time Cyber Volunteer with the Ministry of Home Affairs, Government of India, from August 2025 to June 2026.",
+      "points": ["Served as a Cyber Volunteer with the Ministry of Home Affairs, Government of India.", "Held the part-time volunteering role from August 2025 to June 2026.", "Participated remotely alongside my Computer Science and Engineering studies."]
+    },
+    {
+      "title": "Cyber Security Intern",
+      "company": "The Red Users",
+      "date": "March 2025–May 2025",
+      "startDate": "2025-03",
+      "endDate": "2025-05",
+      "kind": "Internship",
+      "description": "Worked on identifying and fixing security vulnerabilities, monitoring threats, and improving system protection. Contributed to web security and security research while collaborating with cybersecurity professionals.",
+      "points": ["Identified and addressed security vulnerabilities to improve system protection.", "Monitored threats and contributed to web security research.", "Collaborated with cybersecurity professionals to strengthen cyber defenses during the remote internship."]
+    },
+    {
+      "title": "Open Source Contributor",
+      "company": "GirlScript Summer of Code",
+      "date": "October 2024–December 2024",
+      "startDate": "2024-10",
+      "endDate": "2024-12",
+      "kind": "Open source",
+      "description": "Contributed to collaborative open-source projects through code, code reviews, and documentation, working with a community of developers on practical software problems.",
+      "points": ["Contributed clean, efficient code to collaborative open-source projects.", "Participated in code reviews with a diverse developer community.", "Shared knowledge through documentation to support learning and ongoing project development."]
+    }
+  ],
+  "projects": [
+    {
+      "id": "campus-connect", "name": "CampusConnect", "group": "Featured", "category": "web",
+      "tagline": "One campus. Everything connected.",
+      "description": "A college companion that brings timetables, attendance tracking, student discussions, faculty information, and campus clubs into one dashboard. Built with role-based access and Google sign-in.",
+      "technologies": ["React", "JavaScript", "Tailwind CSS", "Vite", "Firebase"],
+      "repositoryUrl": "https://github.com/Kaushall44/Connect", "url": "https://connect-liard-five.vercel.app", "color": "#86efac", "motif": "campus"
+    },
+    {
+      "id": "soa-nexus", "name": "SOA Nexus AI", "group": "Featured", "category": "ai",
+      "tagline": "Intelligent workflows. Human oversight.",
+      "description": "An institutional service-delivery prototype built with my team for SOA IDEATHON 2026. It explores AI-assisted lab reservations, certificates, maintenance requests, and approval workflows, with a standalone demo mode and an optional live backend.",
+      "technologies": ["React", "TypeScript", "Python", "FastAPI", "Supabase", "Tailwind CSS"],
+      "repositoryUrl": "https://github.com/Kaushall44/Veyon-AI", "url": "https://veyon-ai-alpha.vercel.app", "color": "#c4b5fd", "motif": "ai"
+    },
+    {
+      "id": "email-style-adjuster", "name": "Email Style Adjuster", "group": "Featured", "category": "web",
+      "tagline": "Style it. Preview it. Send it.",
+      "description": "A visual workspace for styling HTML emails. Adjust CSS, see a live preview, and export the resulting email markup through a responsive React interface.",
+      "technologies": ["React", "JavaScript", "Tailwind CSS", "Vite"],
+      "repositoryUrl": "https://github.com/Kaushall44/Email-Style-Adjuster", "url": "https://kaushall44.github.io/Email-Style-Adjuster/", "color": "#fdba74", "motif": "email"
+    },
+    {
+      "id": "kaushal-movies", "name": "Kaushal Movies", "group": "Web Apps", "category": "web",
+      "tagline": "Discover your next watch.",
+      "description": "A responsive, region-aware directory for discovering movie, television, anime, and streaming services. Includes instant catalog search, category filters, and light and dark themes.",
+      "technologies": ["React", "JavaScript", "CSS", "Vite", "Fuse.js"],
+      "repositoryUrl": "https://github.com/Kaushall44/kaushal-movies", "url": "https://kaushal-movies.vercel.app", "color": "#fda4af", "motif": "movies"
+    },
+    {
+      "id": "terminal-portfolio", "name": "Terminal Portfolio", "group": "Web Apps", "category": "web",
+      "tagline": "A different kind of introduction.",
+      "description": "A personal portfolio presented through a hacker-inspired terminal interface. An exploration of how a familiar developer environment can become an interactive introduction.",
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "repositoryUrl": "https://github.com/Kaushall44/kaushall44.github.io", "url": "https://kaushall44.github.io/", "color": "#67e8f9", "motif": "terminal"
+    },
+    {
+      "id": "groq-backend", "name": "Groq AI Backend", "group": "Experiments", "category": "ai",
+      "tagline": "From a terminal prompt to code.",
+      "description": "An Express backend connected to the Groq API for terminal-based code generation. Includes a command-line client, formatted responses, and support for downloading generated code files.",
+      "technologies": ["Node.js", "Express", "JavaScript", "Groq API", "Vercel"],
+      "repositoryUrl": "https://github.com/Kaushall44/Kaushal-ITER", "url": "", "color": "#fde68a", "motif": "code"
+    },
+    {
+      "id": "vscode-portfolio", "name": "VS Code Portfolio", "group": "Experiments", "category": "web",
+      "tagline": "A portfolio inside your editor.",
+      "description": "A developer portfolio styled like Visual Studio Code, featuring a simulated terminal, command palette, and theme toggle. Built to make exploring projects feel familiar to developers.",
+      "technologies": ["React", "TypeScript", "Vite", "CSS"],
+      "repositoryUrl": "https://github.com/Kaushall44/vs-code-theme-portfolio", "url": "https://kaushall44.github.io/vs-code-theme-portfolio/", "color": "#93c5fd", "motif": "editor"
+    }
+  ]
+}

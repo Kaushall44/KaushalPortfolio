@@ -1,0 +1,160 @@
+$terminal-green: #a6e3a1;
+$terminal-header-bg: #313244;
+$terminal-text: #cdd6f4;
+
+.terminal-window {
+  width: 100%;
+  max-width: 900px;
+  margin: 24px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: max-width 0.3s ease, margin 0.3s ease;
+
+  &.terminal-expanded {
+    max-width: 100%;
+  }
+}
+
+.terminal-header {
+  background: $terminal-header-bg;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  user-select: none;
+
+  .terminal-title {
+    color: rgba($terminal-text, 0.6);
+    font-size: 13px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.terminal-body {
+  background: #1e1e2e;
+  position: relative;
+}
+
+.xterm-container {
+  width: 100%;
+  padding: 8px;
+
+  .xterm {
+    height: 100%;
+  }
+
+  // xterm renders a canvas - match its viewport precisely
+  .xterm-screen {
+    width: 100% !important;
+  }
+}
+
+// Matrix rain overlay
+.matrix-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.95);
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  .matrix-dismiss {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba($terminal-green, 0.6);
+    font-size: 12px;
+    font-family: monospace;
+  }
+}
+
+// "New" badge on Terminal tab
+.tab-badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background: #ff3b30;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 3px 5px;
+  border-radius: 10px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  pointer-events: none;
+  box-shadow: 0 1px 4px rgba(255, 59, 48, 0.4);
+}
+
+// Terminal modal (Cmd+T)
+.terminal-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+.terminal-modal-content {
+  width: 100%;
+  max-width: 960px;
+
+  .terminal-window {
+    margin: 0;
+    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.5);
+  }
+}
+
+// Minimized state
+.terminal-window.terminal-minimized {
+  .terminal-body {
+    display: none;
+  }
+}
+
+// Responsive
+@media screen and (max-width: 600px) {
+  .terminal-window {
+    margin: 12px 0;
+    border-radius: 8px;
+    max-width: 100%;
+  }
+
+  .xterm-container {
+    padding: 4px;
+  }
+
+  .terminal-header .terminal-title {
+    font-size: 11px;
+  }
+
+  .terminal-modal-overlay {
+    padding: 12px;
+    align-items: flex-start;
+    padding-top: 48px;
+  }
+
+  .terminal-modal-content {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,26 @@
+.card-modal-component {
+  width: min(424px, 100%);
+  .main-card { box-sizing: border-box; width: 100%; padding: 12px; border-radius: 18px; border: 1px solid var(--border-grey); background: var(--white); box-shadow: 0 4px 16px rgba(240,115,45,.06); }
+  .project-open { display: block; background: none; border: 0; padding: 0; cursor: pointer; color: var(--black); font: inherit; text-align: left; }
+  .card-img { display: block; width: 100%; aspect-ratio: 2; object-fit: cover; border-radius: 12px; }
+  .card-heading-flex { display: flex; gap: 14px; align-items: center; padding: 14px 4px 2px; }
+  .card-heading-flex .heading { flex: 1; font-size: 16px; margin: 0; text-align: left; }
+  .icon { font-size: 20px; color: var(--black); }
+  button:focus-visible, a:focus-visible { outline: 2px solid var(--primary-orange); outline-offset: 4px; }
+}
+.workcard-window__content {
+  box-sizing: border-box; padding: 24px; width: 100%; max-width: 1000px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 24px; align-items: stretch; color: var(--black);
+  .project-banner { width: 100%; aspect-ratio: 2; object-fit: contain; border-radius: 12px; }
+  .heading { font-size: clamp(24px, 4vw, 36px); margin: 0; }
+  h3 { margin: 0 0 12px; font-size: 18px; }
+  .desc { line-height: 1.8; color: var(--black); }
+  .project-stack { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+  .project-stack li { background: var(--gradient-mid); padding: 8px 14px; border-radius: 24px; font-size: 14px; }
+  .project-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .project-actions a, .project-actions button { text-decoration: none; background: var(--primary-orange); color: #111; font: inherit; font-weight: 600; padding: 10px 16px; border-radius: 10px; border: 0; cursor: pointer; }
+  .project-share { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; font-size: 14px; }
+  input { box-sizing: border-box; width: 100%; padding: 12px; border: 1px solid var(--text-grey); border-radius: 8px; background: var(--white); color: var(--black); font: inherit; }
+  [role=status] { min-height: 20px; margin-top: 8px; font-size: 14px; }
+}
+@media (max-width:600px) { .workcard-window__content { padding: 16px; } }

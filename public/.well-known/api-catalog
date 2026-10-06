@@ -1,0 +1,44 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://kaushalrajgupta.is-a.dev",
+      "service-desc": [
+        {
+          "href": "https://kaushalrajgupta.is-a.dev/openapi.json",
+          "type": "application/openapi+json",
+          "title": "kaushalrajgupta.is-a.dev public API — OpenAPI 3.1 description"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://kaushalrajgupta.is-a.dev/developers",
+          "type": "text/html",
+          "title": "Developer portal"
+        },
+        {
+          "href": "https://kaushalrajgupta.is-a.dev/developers.md",
+          "type": "text/markdown",
+          "title": "Developer portal (markdown)"
+        }
+      ],
+      "service-meta": [
+        {
+          "href": "https://kaushalrajgupta.is-a.dev/llms.txt",
+          "type": "text/plain",
+          "title": "Structured context for LLM agents"
+        },
+        {
+          "href": "https://kaushalrajgupta.is-a.dev/.well-known/ai-catalog.json",
+          "type": "application/json",
+          "title": "Agentic Resource Discovery catalog"
+        }
+      ],
+      "author": [
+        {
+          "href": "https://kaushalrajgupta.is-a.dev/contact",
+          "title": "Kaushal Raj Gupta"
+        }
+      ]
+    }
+  ]
+}

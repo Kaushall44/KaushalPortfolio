@@ -1,0 +1,88 @@
+# https://www.robotstxt.org/robotstxt.html
+
+# Default: everything is open to well-behaved crawlers.
+User-agent: *
+Allow: /
+
+# --- Answer-engine and assistant crawlers: explicitly welcome ---
+# These fetch pages to answer user questions with attribution.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# --- Training-only scrapers: not welcome ---
+# These bulk-collect for model training without sending traffic or attribution.
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Scrapy
+Disallow: /
+
+# Content Signals — https://contentsignals.org
+# Search and AI-assisted answers with attribution are permitted; using this
+# content as model training data is not.
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+# Sitemap
+Sitemap: https://kaushalrajgupta.is-a.dev/sitemap.xml
+
+# NLWeb schema feed
+Schemamap: https://kaushalrajgupta.is-a.dev/sitemap.xml
+
+# LLM context — structured background, project list, and when-to-use guidance
+Llms-txt: https://kaushalrajgupta.is-a.dev/llms.txt
+
+# Canonical pages also answer to `Accept: text/markdown`, a `.md` URL suffix,
+# or `?mode=agent`. Endpoint reference: https://kaushalrajgupta.is-a.dev/developers

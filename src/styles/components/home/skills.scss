@@ -1,0 +1,45 @@
+.skills-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 64px);
+  max-height: 1000px;
+  min-height: 1000px;
+  position: relative;
+  overflow: visible;
+
+  .main-text {
+    font-size: 24px;
+    color: var(--black);
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .skills-canvas-container {
+    position: absolute;
+    top: 0;
+    // Break out of parent max-width to fill full viewport
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .skills-container {
+    min-height: 800px;
+  }
+}

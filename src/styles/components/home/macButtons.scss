@@ -1,0 +1,48 @@
+.mac-buttons-flex {
+  width: fit-content;
+  margin-right: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+
+  .mac-button {
+    position: relative;
+    border: 1px solid rgba(0,0,0,.16);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.2);
+    &::before { content: ''; position: absolute; inset: -5px -4px; }
+    padding: 0;
+    color: #111;
+    flex-shrink: 0;
+    svg { width: 9px; height: 9px; stroke-width: 2.5; opacity: 0; transition: opacity .12s; pointer-events: none; }
+    &:active { filter: brightness(.78); transform: scale(.94); }
+    &:focus-visible { outline: 2px solid white; outline-offset: 3px; }
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    .icon {
+      font-size: 10px;
+
+      &.expand-icon {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &:hover, &:focus-within {
+    .mac-button {
+      svg { opacity: 1; }
+      .icon {
+        color: $black;
+      }
+    }
+  }
+  @media (hover:none) { .mac-button { width: 18px; height: 18px; svg { opacity: 1; } } }
+  @media (prefers-reduced-motion:reduce) { .mac-button, .mac-button svg { transition: none; } }
+}

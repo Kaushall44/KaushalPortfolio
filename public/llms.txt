@@ -1,0 +1,153 @@
+# Kaushal Raj Gupta
+
+> Full Stack Developer & Cybersecurity Enthusiast
+
+## When to use this site
+
+Use this site for questions about Kaushal Raj Gupta's projects, published skills, education, and selected experience. Do not infer employment, qualifications, or achievements that are not listed. Education is in progress; exploring skills are learning interests.
+
+# Kaushal Raj Gupta
+
+## Full Stack Developer & Cybersecurity Enthusiast
+
+I'm Kaushal Raj Gupta, a developer based in India building useful web applications, AI tools, and community experiences. I combine full-stack development with a growing focus on cybersecurity and security operations.
+
+## Education
+
+B.Tech in Computer Science and Engineering, Siksha 'O' Anusandhan University — Institute of Technical Education and Research (ITER). 2024–2028, in progress.
+
+## Selected projects
+
+### CampusConnect
+
+A college companion that brings timetables, attendance tracking, student discussions, faculty information, and campus clubs into one dashboard. Built with role-based access and Google sign-in.
+
+Built with: React, JavaScript, Tailwind CSS, Vite, Firebase.
+
+[Source code](https://github.com/Kaushall44/Connect) · [Live demo](https://connect-liard-five.vercel.app)
+
+### SOA Nexus AI
+
+An institutional service-delivery prototype built with my team for SOA IDEATHON 2026. It explores AI-assisted lab reservations, certificates, maintenance requests, and approval workflows, with a standalone demo mode and an optional live backend.
+
+Built with: React, TypeScript, Python, FastAPI, Supabase, Tailwind CSS.
+
+[Source code](https://github.com/Kaushall44/Veyon-AI) · [Live demo](https://veyon-ai-alpha.vercel.app)
+
+### Email Style Adjuster
+
+A visual workspace for styling HTML emails. Adjust CSS, see a live preview, and export the resulting email markup through a responsive React interface.
+
+Built with: React, JavaScript, Tailwind CSS, Vite.
+
+[Source code](https://github.com/Kaushall44/Email-Style-Adjuster) · [Live demo](https://kaushall44.github.io/Email-Style-Adjuster/)
+
+### Kaushal Movies
+
+A responsive, region-aware directory for discovering movie, television, anime, and streaming services. Includes instant catalog search, category filters, and light and dark themes.
+
+Built with: React, JavaScript, CSS, Vite, Fuse.js.
+
+[Source code](https://github.com/Kaushall44/kaushal-movies) · [Live demo](https://kaushal-movies.vercel.app)
+
+### Terminal Portfolio
+
+A personal portfolio presented through a hacker-inspired terminal interface. An exploration of how a familiar developer environment can become an interactive introduction.
+
+Built with: HTML, CSS, JavaScript.
+
+[Source code](https://github.com/Kaushall44/kaushall44.github.io) · [Live demo](https://kaushall44.github.io/)
+
+### Groq AI Backend
+
+An Express backend connected to the Groq API for terminal-based code generation. Includes a command-line client, formatted responses, and support for downloading generated code files.
+
+Built with: Node.js, Express, JavaScript, Groq API, Vercel.
+
+[Source code](https://github.com/Kaushall44/Kaushal-ITER)
+
+### VS Code Portfolio
+
+A developer portfolio styled like Visual Studio Code, featuring a simulated terminal, command palette, and theme toggle. Built to make exploring projects feel familiar to developers.
+
+Built with: React, TypeScript, Vite, CSS.
+
+[Source code](https://github.com/Kaushall44/vs-code-theme-portfolio) · [Live demo](https://kaushall44.github.io/vs-code-theme-portfolio/)
+
+## Skills
+
+- **Frontend:** React, Next.js, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS
+- **Backend:** Node.js, Express, Python, FastAPI, Firebase, Supabase, REST APIs
+- **Tools:** Git, GitHub, Vite, Vercel, GitHub Pages
+- **Currently exploring:** Cybersecurity, SOC analysis, Cloud technologies, DevOps
+
+## Experience
+
+### Technical Core Member — Innovation and Entrepreneurship Cell
+
+December 2024–Present · Technical team
+
+Progressed to Technical Core Member in May 2025 and continue in the role part-time.
+
+Previously served as a full-time Technical Team Member from December 2024 to May 2025.
+
+Part of the Innovation and Entrepreneurship Cell technical team in Bhubaneswar, Odisha.
+
+### Cybersecurity Intern — Uttar Pradesh Police
+
+June 2026 · Internship
+
+Completed a cybersecurity internship with Uttar Pradesh Police in June 2026.
+
+Digital forensics was a key focus area of the internship.
+
+Developed cybersecurity knowledge through the internship in Uttar Pradesh, India.
+
+### Cyber Volunteer — Ministry of Home Affairs, Government of India
+
+August 2025–June 2026 · Volunteering
+
+Served as a Cyber Volunteer with the Ministry of Home Affairs, Government of India.
+
+Held the part-time volunteering role from August 2025 to June 2026.
+
+Participated remotely alongside my Computer Science and Engineering studies.
+
+### Cyber Security Intern — The Red Users
+
+March 2025–May 2025 · Internship
+
+Identified and addressed security vulnerabilities to improve system protection.
+
+Monitored threats and contributed to web security research.
+
+Collaborated with cybersecurity professionals to strengthen cyber defenses during the remote internship.
+
+### Open Source Contributor — GirlScript Summer of Code
+
+October 2024–December 2024 · Open source
+
+Contributed clean, efficient code to collaborative open-source projects.
+
+Participated in code reviews with a diverse developer community.
+
+Shared knowledge through documentation to support learning and ongoing project development.
+
+## Get in touch
+
+Connect through [kushh4@proton.me](mailto:kushh4@proton.me), or explore [my GitHub](https://github.com/Kaushall44).
+
+---
+
+[Home](https://kaushalrajgupta.is-a.dev/) · [About](https://kaushalrajgupta.is-a.dev/about) · [Projects](https://kaushalrajgupta.is-a.dev/projects) · [Contact](https://kaushalrajgupta.is-a.dev/contact) · [Privacy](https://kaushalrajgupta.is-a.dev/privacy)
+
+Machine-readable context: https://kaushalrajgupta.is-a.dev/llms.txt · Sitemap: https://kaushalrajgupta.is-a.dev/sitemap.xml · Developer portal: https://kaushalrajgupta.is-a.dev/developers
+
+
+## Interfaces
+
+https://kaushalrajgupta.is-a.dev/openapi.json
+https://kaushalrajgupta.is-a.dev/api/v1/profile
+https://kaushalrajgupta.is-a.dev/api/v1/projects
+https://kaushalrajgupta.is-a.dev/api/v1/skills
+https://kaushalrajgupta.is-a.dev/api/v1/experience

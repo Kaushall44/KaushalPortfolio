@@ -1,0 +1,72 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Kaushal Raj Gupta",
+    "identifier": "kaushalrajgupta.is-a.dev"
+  },
+  "entries": [
+    {
+      "identifier": "portfolio-context",
+      "displayName": "Portfolio context",
+      "type": "text/plain",
+      "url": "https://kaushalrajgupta.is-a.dev/llms.txt",
+      "description": "Biography, projects, skills, education, and selected experience."
+    },
+    {
+      "identifier": "portfolio-api",
+      "displayName": "Portfolio API",
+      "type": "application/openapi+json",
+      "url": "https://kaushalrajgupta.is-a.dev/openapi.json",
+      "description": "Read-only structured profile and optional AI chat."
+    },
+    {
+      "identifier": "page-home",
+      "displayName": "Kaushal Raj Gupta | Full Stack Developer & Cybersecurity Enthusiast",
+      "type": "text/markdown",
+      "url": "https://kaushalrajgupta.is-a.dev/index.md",
+      "description": "Explore Kaushal Raj Gupta’s web applications, AI projects, skills, and cybersecurity interests. Computer Science student at SOA / ITER, India."
+    },
+    {
+      "identifier": "page-tools",
+      "displayName": "Tools | Kaushal Raj Gupta",
+      "type": "text/markdown",
+      "url": "https://kaushalrajgupta.is-a.dev/tools.md",
+      "description": "Private browser tools for cleaner links, photo privacy, file checksums, file signatures, and hidden Unicode characters."
+    },
+    {
+      "identifier": "page-about",
+      "displayName": "About Kaushal Raj Gupta",
+      "type": "text/markdown",
+      "url": "https://kaushalrajgupta.is-a.dev/about.md",
+      "description": "Meet Kaushal Raj Gupta: full stack developer, Computer Science student at SOA / ITER, and cybersecurity enthusiast based in India."
+    },
+    {
+      "identifier": "page-projects",
+      "displayName": "Projects | Kaushal Raj Gupta",
+      "type": "text/markdown",
+      "url": "https://kaushalrajgupta.is-a.dev/projects.md",
+      "description": "Selected projects by Kaushal Raj Gupta: CampusConnect, SOA Nexus AI, Email Style Adjuster, Kaushal Movies, and developer tools."
+    },
+    {
+      "identifier": "page-contact",
+      "displayName": "Contact Kaushal Raj Gupta",
+      "type": "text/markdown",
+      "url": "https://kaushalrajgupta.is-a.dev/contact.md",
+      "description": "Connect with Kaushal Raj Gupta about web development, AI tools, cybersecurity learning, and project collaboration."
+    },
+    {
+      "identifier": "page-privacy",
+      "displayName": "Privacy | Kaushal Raj Gupta",
+      "type": "text/markdown",
+      "url": "https://kaushalrajgupta.is-a.dev/privacy.md",
+      "description": "How this portfolio handles optional camera controls, browser storage, external resources, and AI chat."
+    },
+    {
+      "identifier": "page-developers",
+      "displayName": "Developer Portal | Kaushal Raj Gupta",
+      "type": "text/markdown",
+      "url": "https://kaushalrajgupta.is-a.dev/developers.md",
+      "description": "Read-only portfolio APIs, markdown content negotiation, structured data, and integration guidance for Kaushal Raj Gupta’s portfolio."
+    }
+  ]
+}

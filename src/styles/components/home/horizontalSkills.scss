@@ -1,0 +1,61 @@
+.horizontal-skills-parent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin: 64px 0px;
+
+  .horizontal-skills-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden; // Disable manual scrolling
+    gap: 0px 24px;
+    position: relative;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%
+    );
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .icon {
+      min-width: 120px;
+      height: 120px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .horizontal-skills-parent {
+    width: 100%;
+    gap: 18px;
+    margin: 24px 0px;
+
+    .horizontal-skills-wrapper {
+      gap: 0px 18px;
+
+      .icon {
+        min-width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+      }
+    }
+  }
+}

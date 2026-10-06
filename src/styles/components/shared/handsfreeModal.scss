@@ -1,0 +1,419 @@
+// Legacy overlay (no longer used - handled by window-overlay-backdrop)
+.handsfree-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.handsfree-modal-body,
+.handsfree-modal-content {
+  background-color: var(--white);
+  padding: 16px 24px 28px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+
+  .heading {
+    font-size: 22px;
+    color: var(--black);
+    margin: 0;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .desc {
+    color: $text-grey;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+
+    &.subtle {
+      font-size: 13px;
+      opacity: 0.7;
+    }
+
+    &.error {
+      color: #e74c3c;
+      font-size: 13px;
+    }
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 0;
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--black);
+
+      .feature-icon {
+        font-size: 22px;
+        width: 32px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: rgba($grey, 0.5);
+    border-radius: 2px;
+    overflow: hidden;
+
+    .progress-fill {
+      height: 100%;
+      background-color: $primary-orange;
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+  }
+
+  .enable-button {
+    background-color: $primary-orange;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: darken($primary-orange, 8%);
+    }
+  }
+}
+
+// ── Gesture Tutorial ──
+
+// Legacy overlay (no longer used - handled by window-overlay-backdrop)
+.gesture-tutorial-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.gesture-tutorial-body,
+.gesture-tutorial {
+  background: var(--white);
+  padding: 28px 32px 24px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--black);
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    color: $text-grey;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  &__dismiss {
+    background-color: $primary-orange;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 36px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    margin-top: 4px;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: darken($primary-orange, 8%);
+    }
+  }
+}
+
+.gesture-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba($grey, 0.25);
+  border: 1px solid rgba($grey, 0.3);
+  min-width: 0;
+  overflow: hidden;
+
+  &__icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    width: 36px;
+    text-align: center;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  &__name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--black);
+  }
+
+  &__desc {
+    font-size: 12px;
+    color: $text-grey;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+// ── Mobile ──
+
+@media screen and (max-width: 600px) {
+  .handsfree-modal-content {
+    padding: 14px 18px 22px;
+    gap: 12px;
+    max-width: 92%;
+
+    .heading {
+      font-size: 19px;
+    }
+
+    .desc {
+      font-size: 13px;
+    }
+
+    .features {
+      gap: 10px;
+      padding: 8px 0;
+
+      .feature {
+        font-size: 13px;
+        gap: 10px;
+
+        .feature-icon {
+          font-size: 18px;
+          width: 28px;
+        }
+      }
+    }
+
+    .enable-button {
+      padding: 10px 28px;
+      font-size: 14px;
+    }
+  }
+
+  .gesture-tutorial {
+    padding: 20px 18px 18px;
+    max-width: 92%;
+    gap: 12px;
+
+    &__title {
+      font-size: 18px;
+    }
+
+    &__subtitle {
+      font-size: 13px;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 4px 0;
+    }
+
+    &__dismiss {
+      padding: 8px 28px;
+      font-size: 14px;
+    }
+  }
+
+  .gesture-card {
+    padding: 10px 12px;
+    gap: 10px;
+
+    &__icon {
+      font-size: 22px;
+      width: 30px;
+    }
+
+    &__name {
+      font-size: 13px;
+    }
+
+    &__desc {
+      font-size: 11px;
+    }
+  }
+}
+
+.handsfree-loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+  backdrop-filter: blur(4px);
+}
+
+.handsfree-loader-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px 48px;
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  min-width: 240px;
+}
+
+.handsfree-loader-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba($primary-orange, 0.2);
+  border-top-color: $primary-orange;
+  border-radius: 50%;
+  animation: handsfree-spin 0.8s linear infinite;
+}
+
+@keyframes handsfree-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.handsfree-loader-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0;
+}
+
+.handsfree-loader-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba($grey, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.handsfree-loader-fill {
+  height: 100%;
+  background: $primary-orange;
+  border-radius: 2px;
+}
+
+.handsfree-loader-percent {
+  font-size: 13px;
+  color: $text-grey;
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+@media screen and (max-width: 600px) {
+  .handsfree-loader-card {
+    padding: 24px 32px;
+    min-width: 200px;
+    gap: 12px;
+  }
+
+  .handsfree-loader-spinner {
+    width: 28px;
+    height: 28px;
+  }
+
+  .handsfree-loader-text {
+    font-size: 14px;
+  }
+}
+
+[data-theme='dark'] {
+  .handsfree-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.95);
+  }
+
+  .handsfree-modal-content,
+  .handsfree-modal-body {
+    background-color: #1e1e1e;
+
+    .progress-bar {
+      background-color: rgba(#fff, 0.1);
+    }
+  }
+
+  .gesture-tutorial-overlay {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .gesture-tutorial,
+  .gesture-tutorial-body {
+    background: #1e1e1e;
+  }
+
+  .gesture-card {
+    background: rgba(#fff, 0.05);
+    border-color: rgba(#fff, 0.08);
+  }
+
+  .handsfree-loader-overlay {
+    background: rgba(0, 0, 0, 0.85);
+  }
+
+  .handsfree-loader-card {
+    background: #1e1e1e;
+  }
+
+  .handsfree-loader-bar {
+    background: rgba(#fff, 0.1);
+  }
+}

@@ -1,0 +1,10 @@
+.horizontal-scroller {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gradient-accent) 0%, var(--gradient-end) 100%);
+  transform-origin: 0%;
+  z-index: 9999;
+}

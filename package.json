@@ -1,0 +1,43 @@
+{
+  "name": "kaushal-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^0.10.32",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9",
+    "@vercel/edge": "^1.3.3",
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^6.0.0",
+    "gsap": "^3.12.5",
+    "html2canvas-pro": "^2.0.0",
+    "motion": "^12.34.3",
+    "react": "^19",
+    "react-dom": "^19",
+    "react-icons": "^5.2.1",
+    "react-toastify": "^11",
+    "three": "^0.170",
+    "zustand": "^5"
+  },
+  "scripts": {
+    "dev": "npm run build:artwork && vite",
+    "build:pages": "node scripts/build-pages.mjs",
+    "build": "npm run build:artwork && npm run build:pages && tsc && vite build",
+    "preview": "vite preview",
+    "verify:agentic": "node scripts/verify-agentic.mjs",
+    "build:artwork": "node scripts/build-artwork.mjs",
+    "check": "npm run build:artwork && npm run build:pages && tsc && tsc -p tsconfig.api.json && node scripts/check-portfolio.mjs && node scripts/check-tools.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vercel/node": "^5.6.6",
+    "@vitejs/plugin-react": "^5.1.4",
+    "marked": "^18.0.11",
+    "sass": "^1.77.8",
+    "typescript": "^5.7",
+    "vite": "^7.3.1"
+  }
+}
